@@ -4,28 +4,26 @@ import { useHistory } from 'react-router';
 
 import discordLogo from '../../assets/discord-logo.svg';
 import twitterLogo from '../../assets/twitter-logo.svg';
-import documentLogo from '../../assets/document-logo.svg';
 import Screen from '../../components/layout/Screen';
 import { routes } from '../../router/routes';
 import useCommonStyles from '../../assets/styles';
 import { useStyles } from './styles';
 import { useViewport } from '../../hooks/useViewport';
-import { DeviceType } from '../../providers/ViewportProvider';
+
 require('./styles.css');
 
-const LandingScreen: FC = () => {
+
+
+const AuctionScreen: FC = () => {
   const { device } = useViewport();
   const classes = { ...useCommonStyles(), ...(useStyles({ device }) as any) };
-  const { push } = useHistory();
+  const { push } = useHistory();  
 
   return (
-    <div className={classes.root}>
-      <img
-        className={device === DeviceType.Phone ? 'banner-small' : 'banner'}
-        src="dRaffle-LC-banner.png"
-        alt={'Site banner'}
-        width={device === DeviceType.Phone ? '280px' : '600px'}
-      />
+    <div  className={classes.root}>
+        <div className="container">
+        Coming Soon
+        </div>
       <div className={classes.socialLinksContainer}>
         <div className={classes.socialLinkContainer}>
           <Tooltip title="Discord" placement="top">
@@ -43,7 +41,7 @@ const LandingScreen: FC = () => {
             <Link
               className={classes.socialLink}
               target="blank"
-              href={`https://twitter.com/https://twitter.com/cynova__`}
+              href={`https://twitter.com/cynova__`}
             >
               <img src={twitterLogo} alt={'twitter-logo'} width="50px" />
             </Link>
@@ -72,14 +70,14 @@ const LandingScreen: FC = () => {
           Explore raffles
         </Button>
       </div>
-    </div>
-  );
-};
+      </div>
+  )
+}
 
-const LandingScreenWithLayout = () => (
+const AuctionScreenWithLayout = () => (
   <Screen>
-    <LandingScreen />
+    <AuctionScreen />
   </Screen>
 );
 
-export default LandingScreenWithLayout;
+export default AuctionScreenWithLayout;

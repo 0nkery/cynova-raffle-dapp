@@ -56,5 +56,8 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
     currentLocation: {
       color: 'black',
     },
+    disabledLink: {
+      pointerEvents: 'none',
+    },
   })
 );

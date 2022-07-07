@@ -6,6 +6,8 @@ import ExploreRafflesScreen from '../pages/ExploreRafflesScreen';
 import RaffleDetailsScreen from './raffleDetails';
 import LandingScreen from '../pages/LandingScreen';
 import StakeScreen from '../pages/StakeScreen';
+import MarketplaceScreen from '../pages/MarketplaceScreen';
+import AuctionScreen from '../pages/AuctionScreen';
 import AdminHomeScreen from '../pages/admin/AdminHomeScreen';
 import AdminRaffleScreen from '../pages/admin/AdminRaffleScreen';
 import ToolsScreen from '../pages/ToolsScreen';
@@ -15,6 +17,8 @@ export const Router: FC = () => (
     <Route path="/" exact component={LandingScreen} />
     <Route path={`${routes.RAFFLES}/:id`} component={RaffleDetailsScreen} />
     <Route path={routes.RAFFLES} exact component={ExploreRafflesScreen} />
+    <Route path={routes.MARKET} exact component={MarketplaceScreen} />
+    <Route path={routes.AUCTION} exact component={AuctionScreen} />
     <Route path={routes.STAKE} exact component={StakeScreen} />
     <Route path={routes.TOOLS} exact component={ToolsScreen} />
     <Route path={routes.ADMIN.HOME} exact component={AdminHomeScreen} />
