@@ -31,10 +31,10 @@ const testWhitelist = new Map<string, RaffleMetaData>([
 
 const prodWhitelist = new Map<string, RaffleMetaData>([
   [
-    '6e9g2aFU7QPT4Gv2Tb2Ae5WWQGZAFSsaebK3E3ay3hD',
+    '6JME6pp24bUzNjMbLhKMJ8E4hYhnh6QWVPcLybtEHmtu',
     {
-      name: 'TestRaffle',
-      overviewImageUri: '/resources/001-mainnet-launch.gif',
+      name: 'Cynova Raffle #1',
+      overviewImageUri: 'raffle1.png',
     },
   ]
   ],

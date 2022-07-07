@@ -1,10 +1,13 @@
 anchor_version = "0.17.0"
 
 [provider]
-cluster = "devnet"
+cluster = "mainnet"
 wallet = "~/sites/cynova/operations/deploy-keypair.json"
 
 [programs.devnet]
+draffle = "rafdfDKiLiny6puqDfeLRTN1xUscNxi5ew4QAqCHpQU"
+
+[programs.mainnet]
 draffle = "rafdfDKiLiny6puqDfeLRTN1xUscNxi5ew4QAqCHpQU"
 
 [scripts]

@@ -32,7 +32,7 @@ const LandingScreen: FC = () => {
             <Link
               className={classes.socialLink}
               target="blank"
-              href={`https://t.co/BtbE5rb6Bk?amp=1`}
+              href={`https://discord.gg/cA5kGBbt`}
             >
               <img src={discordLogo} alt={'disord-logo'} width="50px" />
             </Link>
@@ -43,7 +43,7 @@ const LandingScreen: FC = () => {
             <Link
               className={classes.socialLink}
               target="blank"
-              href={`https://twitter.com/draffleluckclub`}
+              href={`https://twitter.com/the_cynova`}
             >
               <img src={twitterLogo} alt={'twitter-logo'} width="50px" />
             </Link>
