@@ -36,6 +36,13 @@ const prodWhitelist = new Map<string, RaffleMetaData>([
       name: 'Cynova Raffle #1',
       overviewImageUri: 'raffle1.png',
     },
+  ],
+  [
+    'GqbsxQjDLT8nhTbb2YB19G8G7dh6PkMjwAUFYKBXPATn',
+    {
+      name: 'Cynova Raffle #2',
+      overviewImageUri: 'raffle1.png',
+    },
   ]
   ],
 );
