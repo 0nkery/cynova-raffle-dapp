@@ -4,7 +4,7 @@ import { DISPENSER_PROGRAM_ID, DISPENSER_REGISTRY_ADDRESS } from './programIds';
 
 export const ADMIN_ACCOUNTS = TESTING
   ? ['PeRXuY1P4cnzDZEPH1ancRVSyQMDpnTF27BwmQ1kkWq']
-  : ['86f5xSDrue8Zz4QfuMErURN3o393L72zA1J2WRsYeTGB'];
+  : ['PeRXuY1P4cnzDZEPH1ancRVSyQMDpnTF27BwmQ1kkWq'];
 
 export const [VAULT_TOKEN_IN] = utils.publicKey.findProgramAddressSync(
   [Buffer.from('vault_token_in'), DISPENSER_REGISTRY_ADDRESS.toBytes()],
