@@ -323,20 +323,30 @@ fn collect_proceeds(
         Pubkey::find_program_address(&[raffle.key().as_ref(), b"proceeds".as_ref()], &program_id);
     let rpc_client = program_client.rpc();
     let latest_hash = rpc_client.get_latest_blockhash().unwrap();
+
+    let mut accounts = draffle::accounts::CollectProceeds {
+        raffle,
+        proceeds,
+        creator: program_client.payer(),
+        creator_proceeds,
+        token_program: spl_token::id(),
+    }
+    .to_account_metas(None);
+    // TODO: hot fix, remove after re-deploy
+    accounts.push(AccountMeta {
+        pubkey: creator_proceeds,
+        is_signer: false,
+        is_writable: true,
+    });
+
+    let ix = Instruction {
+        program_id,
+        accounts,
+        data: draffle::instruction::CollectProceeds.data(),
+    };
     rpc_client.send_and_confirm_transaction_with_spinner_and_config(
         &Transaction::new_signed_with_payer(
-            &[Instruction {
-                program_id,
-                accounts: draffle::accounts::CollectProceeds {
-                    raffle,
-                    proceeds,
-                    creator: program_client.payer(),
-                    creator_proceeds,
-                    token_program: spl_token::id(),
-                }
-                .to_account_metas(None),
-                data: draffle::instruction::CollectProceeds.data(),
-            }],
+            &[ix],
             Some(&program_client.payer()),
             &[payer],
             latest_hash,
